@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'elastisearch::jdk'
+include_recipe 'elasticsearch::jdk'
 
 apt_repository 'elasticsearch' do
   uri        'http://packages.elasticsearch.org/elasticsearch/1.0/debian'
