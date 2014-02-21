@@ -11,6 +11,7 @@
 apt_repository 'elasticsearch' do
   uri        'http://packages.elasticsearch.org/elasticsearch/1.0/debian'
   components ['main', 'stable']
+  key 'http://packages.elasticsearch.org/GPG-KEY-elasticsearch'
 end
 
 package "elasticsearch" do
