@@ -11,7 +11,7 @@ include_recipe 'elasticsearch::jdk'
 
 apt_repository 'elasticsearch' do
   uri        'http://packages.elasticsearch.org/elasticsearch/1.0/debian'
-  components ['main', 'stable']
+  components ['stable', 'main']
   key 'http://packages.elasticsearch.org/GPG-KEY-elasticsearch'
 end
 
