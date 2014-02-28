@@ -1,4 +1,4 @@
 site :opscode
 
-cookbook 'apt'
+cookbook 'apt', github: 'cookbooks/apt'
 metadata
