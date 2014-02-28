@@ -16,6 +16,7 @@ cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
   owner 'root'
   group 'root'
   mode 0444
+  notifies :restart, "service[logstash]"
 end
 
 cookbook_file "/etc/logstash/conf.d/local_machine.conf" do
@@ -24,6 +25,7 @@ cookbook_file "/etc/logstash/conf.d/local_machine.conf" do
   owner 'root'
   group 'root'
   mode 0444
+  notifies :restart, "service[logstash]"
 end
 
 
