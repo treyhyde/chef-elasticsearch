@@ -19,6 +19,16 @@ cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
   notifies :restart, "service[logstash]"
 end
 
+cookbook_file "/etc/defaults/logstash" do
+  source 'logstash.defaults'
+  action :create
+  owner 'root'
+  group 'root'
+  mode 0444
+  notifies :restart, "service[logstash]"
+end
+
+
 cookbook_file "/etc/init.d/logstash" do
   source 'logstash.rc'
   action :create
