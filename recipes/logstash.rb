@@ -30,10 +30,12 @@ end
 
 
 service "logstash" do
+  enabled true
   action [ :enable, :start ]
 end
 
 service "logstash-web" do
+  enabled true
   action [ :enable, :start ]
 end
 
