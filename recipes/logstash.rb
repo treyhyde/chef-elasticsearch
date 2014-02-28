@@ -11,7 +11,7 @@ end
 
 
 cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
-  source from_cd.conf 
+  source 'from_cd.conf'
   action :create
   owner 'root'
   group 'root'
@@ -19,7 +19,7 @@ cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
 end
 
 cookbook_file "/etc/logstash/conf.d/local_machine.conf" do
-  source local_machine.conf
+  source 'local_machine.conf'
   action :create
   owner 'root'
   group 'root'
