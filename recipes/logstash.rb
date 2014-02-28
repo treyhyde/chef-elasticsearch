@@ -29,8 +29,9 @@ cookbook_file "/etc/init.d/logstash" do
 end
 
 service "logstash" do
-  enabled true
+  supports :status=>true, :restart=>true, :start=>true, :stop=>true
   action [ :enable, :start ]
+  enabled true
 end
 
 
