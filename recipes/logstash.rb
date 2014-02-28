@@ -24,7 +24,7 @@ cookbook_file "/etc/init.d/logstash" do
   action :create
   owner 'root'
   group 'root'
-  mode 0444
+  mode 0555
   notifies :restart, "service[logstash]"
 end
 
