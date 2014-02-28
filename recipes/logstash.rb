@@ -19,15 +19,6 @@ cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
   notifies :restart, "service[logstash]"
 end
 
-cookbook_file "/etc/logstash/conf.d/local_machine.conf" do
-  source 'local_machine.conf'
-  action :create
-  owner 'root'
-  group 'root'
-  mode 0444
-  notifies :restart, "service[logstash]"
-end
-
 
 service "logstash" do
   enabled true
