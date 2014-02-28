@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'apt'
 include_recipe 'elasticsearch::jdk'
 
 apt_repository 'elasticsearch' do
