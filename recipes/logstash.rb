@@ -33,3 +33,7 @@ service "logstash" do
   action [ :enable, :start ]
 end
 
+service "logstash-web" do
+  action [ :enable, :start ]
+end
+
