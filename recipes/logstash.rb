@@ -19,7 +19,7 @@ cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
   notifies :restart, "service[logstash]"
 end
 
-cookbook_file "/etc/defaults/logstash" do
+cookbook_file "/etc/default/logstash" do
   source 'logstash.defaults'
   action :create
   owner 'root'
