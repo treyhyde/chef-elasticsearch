@@ -1,6 +1,6 @@
 
 apt_repository 'logtstash' do
-  uri        'http://packages.elasticsearch.org/logstash/1.3/debian'
+  uri        'http://packages.elasticsearch.org/logstash/1.4/debian'
   components ['stable', 'main']
   key 'http://packages.elasticsearch.org/GPG-KEY-elasticsearch'
 end
