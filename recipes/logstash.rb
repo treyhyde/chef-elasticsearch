@@ -29,12 +29,14 @@ cookbook_file "/etc/default/logstash-web" do
 end
 
 service "logstash" do
+  provider Chef::Provider::Service::Upstart
   supports :status=>true, :restart=>true, :start=>true, :stop=>true
   action [ :enable, :start ]
   enabled true
 end
 
 service "logstash-web" do
+  provider Chef::Provider::Service::Upstart
   supports :status=>true, :restart=>true, :start=>true, :stop=>true
   action [ :enable, :start ]
   enabled true
