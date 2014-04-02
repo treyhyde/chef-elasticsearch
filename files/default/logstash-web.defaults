@@ -1,0 +1,2 @@
+#bug in logstash-web upstart script causes the app to fail to start if you pass a log path (logstash web does not accept a log path)
+LS_LOG_FILE=""

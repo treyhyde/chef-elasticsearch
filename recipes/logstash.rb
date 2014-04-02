@@ -19,23 +19,13 @@ cookbook_file "/etc/logstash/conf.d/from_cd.conf" do
   notifies :restart, "service[logstash]"
 end
 
-cookbook_file "/etc/default/logstash" do
-  source 'logstash.defaults'
+cookbook_file "/etc/default/logstash-web" do
+  source 'logstash-web.defaults'
   action :create
   owner 'root'
   group 'root'
   mode 0444
-  notifies :restart, "service[logstash]"
-end
-
-
-cookbook_file "/etc/init.d/logstash" do
-  source 'logstash.rc'
-  action :create
-  owner 'root'
-  group 'root'
-  mode 0555
-  notifies :restart, "service[logstash]"
+  notifies :restart, "service[logstash-web]"
 end
 
 service "logstash" do
@@ -44,4 +34,9 @@ service "logstash" do
   enabled true
 end
 
+service "logstash-web" do
+  supports :status=>true, :restart=>true, :start=>true, :stop=>true
+  action [ :enable, :start ]
+  enabled true
+end
 
