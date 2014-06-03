@@ -28,6 +28,16 @@ cookbook_file "/etc/default/logstash-web" do
   notifies :restart, "service[logstash-web]"
 end
 
+cookbook_file "/opt/logstash/vendor/kibana/app/dashboards/default.json" do
+  source 'monolith.json'
+  action :create
+  owner 'root'
+  group 'root'
+  mode 0444
+  notifies :restart, "service[logstash-web]"
+end
+
+
 service "logstash" do
   provider Chef::Provider::Service::Upstart
   supports :status=>true, :restart=>true, :start=>true, :stop=>true
