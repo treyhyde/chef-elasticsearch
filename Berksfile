@@ -1,4 +1,5 @@
-site :opscode
+source "https://api.berkshelf.com"
+#site :opscode
 
-cookbook 'apt', github: 'cookbooks/apt'
+cookbook 'apt', github: 'opscode-cookbooks/apt'
 metadata
